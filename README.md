@@ -17,7 +17,7 @@ L'objectif est de démontrer la maîtrise des concepts fondamentaux du Data Engi
 ### 1. Prérequis
 Assurez-vous d'avoir Python 3 et Git installés sur votre machine. Clonez ce dépôt puis placez-vous dans le dossier du projet :
 ```bash
-git clone [https://github.com/VOTRE_NOM/VelibProject.git](https://github.com/VOTRE_NOM/VelibProject.git)
+git clone git@github.com:Madacoeur/daily-city-metrics-engine.git
 cd VelibProject
 ```
 
