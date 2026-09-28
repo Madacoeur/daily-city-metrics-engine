@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+import sqlite3
 
 def get_weather():
     #URL adress with which we extract the actual weather in Paris
@@ -45,6 +46,16 @@ def transform_data(stations, temperature):
 
     return df_clean
 
+def load_data(df):
+    db_name = "pipeline_ville.db"
+
+    conn = sqlite3.connect(db_name)
+    df.to_sql(name='stations', con=conn, if_exists='append', index=False)
+
+    conn.close()
+
+    print(f"Succes: {len(df)} lignes inserees dans la table 'stations' de la base {db_name}.")
+
 if __name__ == "__main__":
     print("---1.EXTRACTION ---")
     temperature = get_weather()
@@ -52,3 +63,7 @@ if __name__ == "__main__":
 
     print("\n--- 2.TRANSFORMATION---")
     df_cleaned = transform_data(stations_data, temperature)
+
+    print("\n--- 3. CHARGEMENT (LOAD) ---")
+    load_data(df_cleaned)
+    print("\n🚀 Pipeline ETL terminé avec succès !")
