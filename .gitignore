@@ -1,0 +1,15 @@
+# Environnements virtuels
+venv/
+env/
+
+# Bases de données locales
+*.db
+pipeline_ville.db
+
+# Fichiers cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Fichiers de configuration locaux (pour notre future clé API)
+.env
