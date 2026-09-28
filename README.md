@@ -10,18 +10,44 @@ L'objectif est de démontrer la maîtrise des concepts fondamentaux du Data Engi
 * **Transformation (Transform) :** Nettoyage, typage et structuration des données JSON brutes via Python (`pandas`).
 * **Stockage (Load) :** Insertion des données propres dans une base de données relationnelle locale **SQLite**.
 * **Restitution :** Dashboard interactif développé avec **Streamlit**.
+* **Automatisation :** Planification via `cron` (toutes les 15 minutes).
 
-## 🚀 Comment lancer le projet en local
+## 🚀 Installation et Utilisation
 
-### 1. Cloner le dépôt et préparer l'environnement
+### 1. Prérequis
+Assurez-vous d'avoir Python 3 et Git installés sur votre machine. Clonez ce dépôt puis placez-vous dans le dossier du projet :
 ```bash
-# Créer un environnement virtuel
-python -m venv env
+git clone [https://github.com/VOTRE_NOM/VelibProject.git](https://github.com/VOTRE_NOM/VelibProject.git)
+cd VelibProject
+```
 
-# Activer l'environnement (Windows)
-env\Scripts\activate
-# OU Activer l'environnement (Mac/Linux)
-source env/bin/activate
+### 2. Créer l'environnement virtuel
+Il est fortement recommandé d'isoler les dépendances du projet :
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-# Installer les dépendances
+### 3. Installer les dépendances
+```bash
 pip install -r requirements.txt
+```
+
+### 4. Lancer l'extraction de données (ETL)
+Pour générer la base de données locale et y insérer les premières données :
+```bash
+python3 extract.py
+```
+
+### 5. Démarrer le Dashboard web
+Lancez l'interface Streamlit pour visualiser les données et la carte interactive :
+```bash
+streamlit run app.py
+```
+L'application s'ouvrira automatiquement dans votre navigateur local.
+
+## 📂 Structure du projet
+* `extract.py` : Script ETL principal (Extraction, Transformation, Chargement).
+* `app.py` : Application web Streamlit (Visualisation).
+* `requirements.txt` : Liste des dépendances Python nécessaires.
+* `.gitignore` : Règles d'exclusion pour le dépôt Git.
