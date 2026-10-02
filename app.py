@@ -22,7 +22,7 @@ st.subheader("Apercu des donnees extraites")
 
 st.dataframe(df_stations.head(10))
 
-#4. Indicateurs clés (KPIs) ---
+#4. Indicateurs clés (KPIs)
 st.subheader("📊 Résumé en temps réel")
 
 # on utilise Pandas pour faire des calculs sur notre tableau
